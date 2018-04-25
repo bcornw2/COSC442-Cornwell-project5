@@ -2,6 +2,7 @@
 import java.io.*;
 import java.util.*;
 
+
 /**
  * 
  Program to compute the W-set for a given FSM.
@@ -385,26 +386,31 @@ public class WMethod{
      // 		the FSM using the Utilities.runFSM() method. 
      //
      // Example use of the Utilities.runFSM() method
-     // Utilities.runFSM(FSM, 1, "a a b a b", " ");
+     System.out.println("\n----------------");
+    // Utilities.runFSM(FSM, 1, "a a b a b", " ");
+     System.out.println("\n----------------");
+     
+     
+    	 
      
      
      
      for (String test : tests) {
-    	 Utilities.runFSM(FSM, 1, test, " ");
+    	 test = test.replace("",  " ").trim();
+    	 Utilities.runFSM(FSM, startState, test,  " ");
      }
+    	 
+    	 /*
+    	 for (int i = 0; i < result.length; i++) {
+    		 String tester += result[i] + " ";
+    		 System.out.println(tester);
+    		 System.out.println("-----------");
+    	 }
+     }*/
      
-     int i = 1;
-          
-     for (String test : tests) {
-    	 //containsYes = Utilities.getOutputPatterns(FSM, 1, test, " ");
-    	 System.out.println("@Test");
-    	 System.out.println("public void testCase" + i + "() {");
-    	 
-    	 System.out.println("    assertTrue(" + test + "\"));");
-    	 
-    	 System.out.println("}");
-    	 System.out.println();
-    	 i++;
-     }
-}
-}
+     
+     
+     
+   }// End of main()
+   
+}//End of class WMethod

@@ -338,7 +338,7 @@ public class WMethod{
       for(int j = 0; j < wVector.size(); j++){
         String pValue = (String) pVector.get(i);
         String wValue = (String) wVector.get(j);
-        String testCase = pValue + wValue;
+        String testCase = pValue + " " + wValue;
         if(!existsInVector(testCase, testCases)){ 
           testCases.add(testCase); 
         }else
@@ -385,12 +385,18 @@ public class WMethod{
      // 		the FSM using the Utilities.runFSM() method. 
      //
      // Example use of the Utilities.runFSM() method
-     // Utilities.runFSM(FSM, 1, "a a b a b", " ");
+     System.out.println("\n----------------");
+     Utilities.runFSM(FSM, 1, "a a b a b", " ");
+     System.out.println("\n----------------");
+     
+     for (String test : tests) {
+    	 Utilities.runFSM(FSM, 1, test, null);
+    	 System.out.println("\n --------------");
+     }
+     
+     
+     
      
    }// End of main()
    
 }//End of class WMethod
-
-
-
-
